@@ -14,7 +14,7 @@ const Navbar = () => {
           fontWeight: '600',
           fontSize: '1.5rem'
         }}>
-          <strong>eMOB</strong>
+          <strong>EDP-eMob</strong>
         </Link>
         <button
           className="navbar-toggler"
