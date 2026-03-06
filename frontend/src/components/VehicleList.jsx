@@ -52,13 +52,14 @@ const VehicleList = () => {
   const fetchVehicleSolutions = async (vehicleId) => {
     setSolutionsLoading(true);
     try {
-      const response = await fetch(`http://localhost:8000/soluciones_por_vehiculo/${vehicleId}`);
+      const backendUrl = import.meta.env.VITE_BACKEND_API_URL || 'http://localhost:8000';
+      const response = await fetch(`${backendUrl}/soluciones_por_vehiculo/${vehicleId}`);
       if (!response.ok) throw new Error('Error fetching solutions');
       const data = await response.json();
 
       // Obtener nombres de rutas
       const routeIds = [...new Set(data.map(sol => sol.ruta_completa))];
-      const namesResponse = await fetch('http://localhost:8000/rutas_completas');
+      const namesResponse = await fetch(`${backendUrl}/rutas_completas`);
       const routesData = await namesResponse.json();
 
       const namesMap = {};

@@ -10,7 +10,7 @@ import {
 } from 'react-bootstrap-icons';
 import { useNavigate } from 'react-router-dom';
 
-const BACKEND_API_URL = 'http://127.0.0.1:8000';
+const BACKEND_API_URL = import.meta.env.VITE_BACKEND_API_URL || 'http://127.0.0.1:8000';
 
 const CrearSoluciones = () => {
   // Estados para las soluciones generadas
@@ -559,10 +559,10 @@ const CrearSoluciones = () => {
                 {mensajeEstado && (
                   <div
                     className={`mt-3 alert ${mensajeEstado.includes("✅")
-                        ? "alert-success"
-                        : mensajeEstado.includes("❌")
-                          ? "alert-danger"
-                          : "alert-info"
+                      ? "alert-success"
+                      : mensajeEstado.includes("❌")
+                        ? "alert-danger"
+                        : "alert-info"
                       } text-center`}
                   >
                     {mensajeEstado}

@@ -30,15 +30,14 @@ tramos_solucion_collection = db["Tramo_Solucion"]
 # Iniciamos la aplicación FastAPI
 app = FastAPI()
 
-origins = [
-    "http://localhost:5173",
-    "http://127.0.0.1:5173"
-]
+# 1. Cambia la lista por el comodín "*"
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
-    allow_credentials=True,
+    # 2. IMPORTANTE: Si usas "*", allow_credentials DEBE ser False
+    allow_credentials=False, 
     allow_methods=["*"],
     allow_headers=["*"],
 )

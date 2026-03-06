@@ -13,7 +13,7 @@ import {
 } from 'react-bootstrap-icons';
 import MapaSoluciones from './MapaSoluciones';
 
-const BACKEND_API_URL = 'http://127.0.0.1:8000';
+const BACKEND_API_URL = import.meta.env.VITE_BACKEND_API_URL || 'http://127.0.0.1:8000';
 
 // Color principal que coincide con el navbar
 const PRIMARY_COLOR = '#3498db';

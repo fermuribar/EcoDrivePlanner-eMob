@@ -16,7 +16,7 @@ L.Icon.Default.mergeOptions({
 });
 import * as turf from '@turf/turf';
 
-const BACKEND_API_URL = 'http://127.0.0.1:8000';
+const BACKEND_API_URL = import.meta.env.VITE_BACKEND_API_URL || 'http://127.0.0.1:8000';
 
 // Definimos los íconos personalizados
 const iconoParada = new L.Icon({
@@ -286,7 +286,7 @@ const MapaInteractivo = () => {
       try {
         // 1. Obtenemos la geometría de la ruta completa
         const responseGeometria = await axios.get(
-          `http://router.project-osrm.org/route/v1/driving/${coords}?overview=full&geometries=geojson`
+          `https://router.project-osrm.org/route/v1/driving/${coords}?overview=full&geometries=geojson`
         );
 
         if (responseGeometria.data.routes && responseGeometria.data.routes.length > 0) {
@@ -328,7 +328,7 @@ const MapaInteractivo = () => {
             const coordsTramo = `${nodoOrigen.coordenada.lng},${nodoOrigen.coordenada.lat};${nodoDestino.coordenada.lng},${nodoDestino.coordenada.lat}`;
 
             const responseTramo = await axios.get(
-              `http://router.project-osrm.org/route/v1/driving/${coordsTramo}?overview=false`
+              `https://router.project-osrm.org/route/v1/driving/${coordsTramo}?overview=false`
             );
 
             if (responseTramo.data.routes && responseTramo.data.routes.length > 0) {

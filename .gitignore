@@ -1,0 +1,57 @@
+# Entornos virtuales
+venv/
+env/
+ENV/
+
+# Archivos de caché
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pytest y cobertura
+.pytest_cache/
+.coverage
+htmlcov/
+*.tox
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Archivos de distribución y compilación
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Varios
+.DS_Store
+*.log
+.vscode/
+.idea/
+
+# Variables de entorno
+.env
+.env.*
+!.env.example
+
+# ===== FRONTEND (NODE / REACT / VITE) =====
+# Logs
+logs
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+pnpm-debug.log*
+
+# Dependencias Node
+node_modules/
+
+# Producción Vite
+dist-ssr/
+*.local
+
+# Archivos del sistema y editores (adicional)
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
