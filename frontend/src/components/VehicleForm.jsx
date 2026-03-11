@@ -94,12 +94,24 @@ const VehicleForm = () => {
       <form onSubmit={handleSubmit}>
         {/* Campos existentes */}
         <div className="mb-3">
-          <label className="form-label">Vehicle ID:</label>
+          <label className="form-label">Vehicle ID (name):</label>
           <input type="text" name="Id_Vehiculo" value={vehiculo.Id_Vehiculo} onChange={handleChange} required className="form-control" />
         </div>
         <div className="mb-3">
-          <label className="form-label">Type:</label>
-          <input type="text" name="tipo" value={vehiculo.tipo} onChange={handleChange} required className="form-control" />
+        <label className="form-label">Type:</label>
+        <select
+          name="tipo"
+          value={vehiculo.tipo}
+          onChange={handleChange}
+          required
+          className="form-control"
+        >
+          <option value="">Select type</option>
+          <option value="Hybrid">Hybrid</option>
+          <option value="eV">eV</option>
+          <option value="PHEV">PHEV</option>
+          <option value="ICE">ICE</option>
+        </select>
         </div>
         <div className="mb-3">
           <label className="form-label">Battery (kWh):</label>
